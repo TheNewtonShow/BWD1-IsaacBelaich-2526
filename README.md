@@ -1,2 +1,7 @@
-# WebDevelopment
-exercises from Odisee Brussels
+# Basic Web Development
+
+- Academiejaar: 
+- Opleiding: 
+- Klasgroep: 
+- Naam: 
+
