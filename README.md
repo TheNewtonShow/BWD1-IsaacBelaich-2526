@@ -1,2 +1,2 @@
 # WebDevelopment
-exercises based on small projects both personal and educational
+exercises from Odisee Brussels
