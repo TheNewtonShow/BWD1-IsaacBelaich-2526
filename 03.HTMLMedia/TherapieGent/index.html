@@ -6,25 +6,31 @@
     <title>Therapie Gent</title>
 </head>
 <body>
+
 <header>
-   <ul>
-        <li> <a href="#">NL</a></li>
-        <li> <a href="#">FR</a></li>
-   </ul>
-   <img src="img/logo.png" alt="Therapie Gent">
+    <h1>Therapie Gent</h1>
+
+    <ul>
+        <li><a href="#">NL</a></li>
+        <li><a href="#">FR</a></li>
+    </ul>
+
+    <a href="index.html">
+        <img src="img/logo.png" alt="Therapie Gent">
+    </a>
+
     <nav>
         <ul>
-            <li><a href="#">Over jou</a></li>
-            <li><a href="#">Over mij/ons</a></li> <li><a href="#">Werkwijze</a></li>
-            <li><a href="#">Praktisch</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="#over-jou">Over jou</a></li>
+            <li><a href="#stappenplan">Werkwijze</a></li> <li><a href="#praktisch">Praktisch</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
-    <div class="quote">
+    <blockquote>
         <p>"When we can't think for ourselves, we can always quote"</p>
         <p>Ludwig Wittgenstein</p> 
-    </div>
+    </blockquote>
 </header>
 
 <main>
@@ -32,8 +38,10 @@
         <h2>Over jou</h2>
         
         <figure>
-            <img src="img/spiegel.jpg" alt="Meisje voor de spiegel, Picasso" class="art-image">
-            <figcaption class="caption"><i> meisje voor de spiegel</i>, Picasso, 1932</figcaption>
+            <img src="img/spiegel.jpg" alt="Meisje voor de spiegel, Picasso">
+            <figcaption>
+                <cite>Meisje voor de spiegel</cite>, Picasso, 1932
+            </figcaption>
         </figure>
 
         <p>
@@ -42,7 +50,7 @@
             Diep in jezelf kijken bestaat uit durf:
         </p>
 
-        <ul class="symptoms">
+        <ul>
             <li>slaapproblemen</li>
             <li>angsten</li>
             <li>donkere gedachten <sup>1</sup></li>
@@ -50,14 +58,13 @@
             <li>...</li>
         </ul>
 
-        <p class="footnote">
+        <p>
             <sup>1</sup> Bij suïcidale gedachten, contacteer ons zo snel mogelijk via <a href="#contact">contactinfo</a>.
         </p>
+
         <p>Meditatie oefening van de dag:</p>
         
-        <div class="video-container">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/ZToicYcHIOU" title="Daily Calm Mindfulness" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/ZToicYcHIOU" title="Daily Calm Mindfulness" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </section>
 
     <section id="stappenplan">
@@ -82,40 +89,42 @@
 
     <section id="praktisch">
         <h2>Praktisch</h2>
-        <p>Gesprekken kunnen zowel <strong>op locatie</strong> bij mij of <strong>online</strong> (Zoom, Teams...).</p>
+        <p>Gesprekken kunnen zowel <strong>op locatie</strong> bij mij of <strong>online</strong> (<code>Zoom</code>, <code>Teams</code>...).</p>
     </section>
 
     <section id="prijzen">
         <h2>Prijzen</h2>
-<dl>
-    <dt>intakegesprek</dt>
-    <dd>€75 voor 60min</dd>
+        <dl>
+            <dt>intakegesprek</dt>
+            <dd>€75 voor 60min</dd>
 
-    <dt>individuele sessie</dt>
-    <dd>€50 voor 45min</dd>
+            <dt>individuele sessie</dt>
+            <dd>€50 voor 45min</dd>
 
-    <dt>relatietherapie</dt>
-    <dd>€100 voor 60min</dd>
-</dl>
+            <dt>relatietherapie</dt>
+            <dd>€100 voor 60min</dd>
+        </dl>
     </section>
 
     <section id="contact">
         <h2>Contactinfo</h2>
-         tel <a href="tel:0032123456789">0032/123.45.67.89
-            email: <a href="mailto:info@therapiegent.be">info@therapiegent.be
+        <p>
+            tel <a href="tel:0032123456789">0032/123.45.67.89</a><br>
+            email: <a href="mailto:info@therapiegent.be">info@therapiegent.be</a>
+        </p>
+        
         <address>
-            Brabantdam 79
+            Brabantdam 79<br>
             9000 Gent (België)
         </address>
 
-        <div class="map-container">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2508.368567844!2d3.72!3d51.05!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3714c00000001%3A0x0!2sBrabantdam%2079%2C%209000%20Gent!5e0!3m2!1snl!2sbe!4v1600000000000!5m2!1snl!2sbe" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-        </div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2508.368567844!2d3.72!3d51.05!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3714c00000001%3A0x0!2sBrabantdam%2079%2C%209000%20Gent!5e0!3m2!1snl!2sbe!4v1600000000000!5m2!1snl!2sbe" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
     </section>
 </main>
 
 <footer>
-    <p>&copy; 2025 Therapie Gent</p>
+    <hr>
+    <p>&copy; <small>2025 <strong>Therapie Gent</strong></small></p>
 </footer>
 
 </body>
