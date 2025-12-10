@@ -1,0 +1,123 @@
+/* stylelint-disable no-duplicate-selectors */
+
+/* deel 1: start CSS */
+
+* {
+   margin: 0;
+   padding: 0;
+}
+
+html {
+   background-color: #fff;
+}
+
+body {
+   border: 10px solid white;
+   height: 600px;
+   margin: 20px auto;
+   max-width: 300px;
+   padding: 40px 100px;
+}
+
+h1 {
+   margin-top: 30px;
+}
+
+main {
+   padding-top: 30px;
+}
+
+mark {
+   background-color: transparent;
+}
+
+footer {
+   margin-top: 35px;
+}
+
+/* deel 2: achtergronden */
+body
+{
+background-image: url('../img/bg.png');
+background-size: 100% 100%;
+}
+
+/* deel 3: lettertypes */
+body
+{
+   font-family: Arial;
+}
+h1
+{
+   font-family: 'Caveat', cursive;
+}
+.middle
+{
+   font-family: 'Indie Flower', cursive;
+}
+
+.end
+{
+    font-family: 'Indie Flower', cursive;
+}
+
+/* deel 4: tekstopmaak */
+span
+{
+   color: #c0392b;
+}
+
+h1
+{
+   text-align: center;
+  font-size: 3em;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.middle, .end
+{
+font-family: 'Indie Flower', cursive;
+    font-size: 1.4em;
+    color: #1246ad;
+    line-height: 35px; 
+    background-image: repeating-linear-gradient(
+        transparent,
+        transparent 34px,
+        #d1d1d1 35px
+    );
+}
+
+.end
+{
+   text-align: right;
+    margin-top: 20px;
+    padding-right: 20px;
+}
+
+.salute
+{
+   font-size: 1.2em;;
+}
+
+.date
+{
+   font-size: 0.9em; /* Makes the text 60% the size of the normal text */
+    display: block;   /* Ensures it sits on its own line */
+    margin-top: 5px;
+}
+
+mark
+{
+   font-weight: bold;
+   font-size: 1.2em;
+    color: #000;
+    background-color: rgba(255, 182, 193, 0.4);
+    padding: 0 5px;
+    border-radius: 3px;
+}
+
+/* deel 5: schaduwen */
+body {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
