@@ -17,6 +17,7 @@ body {
     font-size: 13px;
     line-height: 1.6;
     margin: 0;
+    max-width: 960px;
 }
 
 header, #banner, main, footer {
@@ -29,6 +30,9 @@ header, #banner, main, footer {
 img {
     max-width: 100%;
     height: auto;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 h3 {
