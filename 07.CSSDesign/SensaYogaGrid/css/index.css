@@ -1,0 +1,127 @@
+/* ===========================================
+   Banner
+   =========================================== */
+
+#banner {
+   background-image: url(../img/banner.jpg);
+   background-size: cover;
+}
+
+#banner .wrapper {
+   min-height: 300px;
+   display: flex;
+   justify-content: flex-end; 
+   align-items: center;       
+}
+   
+.banner_box .btn-cta {
+   font-size: 18px;
+   padding: 14px 30px;   
+}
+
+.banner_box .btn-cta:hover {
+   color: white;
+}
+   
+.banner_box p {
+   color: #444;
+   font-size: 30px;
+   font-weight: bold;
+   margin-bottom: 30px;
+}
+   
+/* ===========================================
+   Main
+   =========================================== */
+   
+   main.wrapper
+   {
+      display: flex;
+   }
+
+/* left */
+   
+.mainleft {
+   padding: 30px 15px 0 15px;
+   flex: 1;
+}
+   
+#gallery {
+   margin: 35px 0;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+}
+
+#gallery a {
+   width: 23%;
+   margin-bottom: 15px;
+}
+   
+/* right */
+   
+.mainright {
+   padding: 30px 15px 0 15px;
+   flex: 0 0 320px;
+}
+   
+.mainright h3 a {
+   border-bottom: 1px solid #cccccc;
+   color: #333;
+}
+   
+.mainright h3 a:hover {
+   color: #be0a35;
+   text-decoration: none;
+}
+
+.workshop {
+   display: flex;
+   flex-wrap: wrap;
+   margin-bottom: 30px;
+}
+
+.workshop h3 {
+   width: 100%;
+}
+
+.workshop .date {
+   border: 1px solid #ccc;
+   flex: 0 0 60px;
+   height: 60px;
+   text-align: center;
+   margin-right: 15px;
+   padding-top: 5px;
+}
+
+.workshop p {
+   flex: 1; 
+   margin: 0;
+}
+
+.workshop .thumb {
+   float: left; 
+   margin-right: 15px;
+   margin-bottom: 10px;
+   max-width: 60px;
+}
+   
+.workshop .date {
+   border: 1px solid #ccc;
+}
+
+.workshop .day {
+   font-size: 60px;
+   line-height: 1em;
+}
+   
+.readmore {
+   display: block;
+   margin-top: 10px;
+}
+   
+   
+   
+   
+   
+   
