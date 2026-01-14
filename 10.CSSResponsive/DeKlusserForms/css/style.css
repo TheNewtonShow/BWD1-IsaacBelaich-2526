@@ -1,0 +1,442 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    scroll-behavior: smooth;
+    background-color: #fff;
+}
+
+
+header > div,
+section > div,
+footer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/*Algemene typografie*/
+h1, h2, h3, h4, h5 {
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+p {
+    margin-bottom: 1rem;
+    color: #555;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: 0.3s;
+}
+
+ul, ol {
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
+/*Secties witruimte*/
+section {
+    padding: 4rem 0;
+}
+
+
+header {
+    background: #fff;
+    padding: 1.5rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+header > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*Logo*/
+header > div > a {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #0d6efd; 
+}
+
+/*Menu*/
+header ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    gap: 2rem;
+}
+
+header ul li a {
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: #333;
+}
+
+header ul li a:hover {
+    color: #0d6efd;
+}
+
+#home {
+    background-color: #0d6efd;
+    color: #fff;
+    padding: 5rem 0;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+}
+
+/* Grid layout voor Hero */
+#home > div > div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+#home h1 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    color: #fff;
+}
+
+#home p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    max-width: 90%;
+}
+
+/* Knoppen in Hero */
+#home a[href] {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    font-weight: 600;
+    margin-right: 1rem;
+}
+
+#home a[href="offerte.html"] {
+    background-color: #fff;
+    color: #0d6efd;
+}
+
+#home a[href="#diensten"] {
+    border: 2px solid rgba(255,255,255,0.5);
+    color: #fff;
+}
+
+#home a[href="#diensten"]:hover {
+    background-color: rgba(255,255,255,0.1);
+    border-color: #fff;
+}
+
+/* Hero afbeelding */
+#home img {
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    width: 100%;
+    object-fit: cover;
+    max-height: 400px;
+}
+
+section:nth-of-type(2) {
+    text-align: center;
+    background-color: #fff;
+}
+
+section:nth-of-type(2) > div {
+    max-width: 800px; 
+}
+
+section:nth-of-type(2) h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+#diensten {
+    background-color: #f8f9fa; 
+}
+
+#diensten > div > p {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+#diensten h2 {
+    text-align: center;
+}
+
+/* Grid voor 3 diensten */
+#diensten > div > div {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+/* Kaart styling */
+#diensten > div > div > div {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+    height: 100%; 
+}
+
+#diensten > div > div > div:hover {
+    transform: translateY(-5px);
+}
+
+#diensten img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+}
+
+/* Tekst in kaart */
+#diensten h5 {
+    padding: 1.5rem 1.5rem 0.5rem;
+    font-size: 1.25rem;
+    color: #222;
+}
+
+#diensten p {
+    padding: 0 1.5rem 1.5rem;
+    font-size: 0.95rem;
+}
+
+#dagactie {
+    background-color: #fff;
+    text-align: center;
+}
+
+#dagactie > div > div {
+    max-width: 700px;
+    margin: 0 auto;
+    border: 1px solid #eee;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+/* "Vandaag" label */
+#dagactie p:first-child {
+    color: #0d6efd;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+}
+
+#dagactie h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+#dagactie ul {
+    list-style: none;
+    margin: 1.5rem 0;
+    padding: 0;
+    text-align: left;
+    display: inline-block;
+}
+
+#dagactie ul li {
+    margin-bottom: 0.5rem;
+}
+
+/* Prijs styling */
+#dagactie div div div p:first-child {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #198754;
+    margin-bottom: 0;
+}
+
+#dagactie div div div p:last-child {
+    font-size: 0.85rem;
+    color: #999;
+}
+
+#reviews {
+    background-color: #f8f9fa;
+}
+
+#reviews h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+/* Grid voor 3 reviews */
+#reviews > div > div {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+/* Review Kaart */
+#reviews > div > div > div {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+}
+
+/* Sterren */
+#reviews p:first-child {
+    color: #ffc107;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+/* Quote tekst */
+#reviews p:nth-child(2) {
+    font-style: italic;
+    color: #444;
+}
+
+/* Auteur */
+#reviews p:last-child {
+    font-weight: bold;
+    color: #222;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}
+
+#werkwijze {
+    background-color: #fff;
+}
+
+#werkwijze h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+#werkwijze > div > div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+}
+
+#werkwijze h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 0.5rem;
+}
+
+/* Lijsten styling */
+#werkwijze ol li, 
+#werkwijze ul li {
+    margin-bottom: 0.8rem;
+    padding-left: 0.5rem;
+}
+
+#werkwijze span {
+    font-weight: bold;
+    color: #222;
+}
+
+#contact {
+    background-color: #fff;
+    border-top: 1px solid #eee;
+}
+
+#contact h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+#contact > div > div {
+    display: grid;
+    grid-template-columns: 1fr; 
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#contact address {
+    font-style: normal;
+    margin-top: 2rem;
+    border: 1px solid #eee;
+    padding: 2rem;
+    border-radius: 8px;
+    display: inline-block;
+    width: 100%;
+}
+
+#contact address p {
+    margin-bottom: 0.5rem;
+}
+
+#contact address span {
+    font-weight: bold;
+    color: #222;
+}
+
+footer {
+    background-color: #212529;
+    color: #aaa;
+    text-align: center;
+    padding: 2rem 0;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    header > div {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    header ul {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    /* Grids naar 1 kolom */
+    #home > div > div,
+    #diensten > div > div,
+    #reviews > div > div,
+    #werkwijze > div > div {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    /* Hero specifiek */
+    #home {
+        text-align: center;
+        padding-top: 2rem;
+    }
+
+    #home p {
+        margin: 0 auto 2rem;
+    }
+
+    #home > div > div {
+        display: flex;
+        flex-direction: column;
+    }
+}

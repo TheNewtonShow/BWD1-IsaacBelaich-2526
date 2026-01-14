@@ -1,0 +1,33 @@
+/* ===========================================
+   Media queries
+   =========================================== */
+@media (min-width: 500px) {
+    .post__comments {
+        display: block;
+    }
+}
+
+@media (min-width: 700px) {
+    .site__footer {
+        flex-direction: row; 
+        align-items: flex-end;
+        text-align: left;
+    }
+
+    .social__title {
+        text-align: right;
+    }
+}
+
+
+@media (min-width: 900px) {
+    nav ul {
+        flex-direction: row;
+    }
+    main {
+        grid-template-columns: 2fr 1fr;
+    }
+    body {
+        font-size: 15px;
+    }
+}
