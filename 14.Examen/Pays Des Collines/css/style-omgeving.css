@@ -1,0 +1,274 @@
+/* Reset en basisinstellingen */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+    line-height: 1.8;
+    color: #555;
+    background-color: #fff;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: 0.3s;
+}
+
+/* --- Top Bar --- */
+.top-bar {
+    background-color: #fff;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 12px;
+    padding: 10px 0;
+    color: #666;
+}
+
+.top-bar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.lang-selector a {
+    margin-left: 10px;
+    color: #999;
+    font-weight: bold;
+}
+
+.lang-selector a.active {
+    color: #333;
+    background-color: #ddd;
+    padding: 2px 5px;
+}
+
+/* Header Styles */
+header {
+    padding: 20px 50px;
+}
+
+.top-bar {
+    text-align: right;
+    font-size: 11px;
+    margin-bottom: 20px;
+    color: #999;
+}
+
+.top-bar span {
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+}
+
+/* NIEUW: Stijl voor Header Logo */
+.header-logo-img {
+    width: 80px;      
+    height: auto;     
+    display: block;
+    border: 1px solid #ddd; 
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+nav ul li a {
+    font-size: 12px;
+    font-weight: 700;
+    color: #888;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+nav ul li a:hover, nav ul li a.active {
+    color: #000;
+}
+
+/* Main Title Section */
+.main-title-section {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.main-title-section h1 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.separator {
+    width: 40px;
+    height: 2px;
+    background-color: #333;
+    margin: 0 auto;
+}
+
+/* Grid Layout */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto 80px auto;
+    padding: 0 20px;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.column h3 {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.column p {
+    text-align: justify;
+    margin-bottom: 10px;
+    font-size: 13px;
+}
+
+
+.image-box {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.content-img {
+    width: 100%;       
+    height: auto;      
+    display: block;
+    background-color: #eee; 
+}
+
+/* Citaten */
+blockquote {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: #666;
+    padding: 20px 0;
+}
+
+.quote-box {
+    border-left: 3px solid #ddd;
+    padding-left: 20px;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.top-quote {
+    font-size: 15px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    border-bottom: 1px solid #eee;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: #ccc;
+    padding: 60px 50px 20px 50px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-bottom: 1px solid #444;
+    padding-bottom: 40px;
+    margin-bottom: 20px;
+}
+
+
+.footer-logo-img {
+    width: 80px;
+    height: auto;
+    border: 2px solid #777;
+    display: block;
+}
+
+.footer-address {
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.footer-socials {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.social-btn {
+    display: inline-block;
+    background-color: #444;
+    padding: 8px 15px;
+    font-size: 11px;
+    border-radius: 3px;
+    color: #fff;
+}
+
+.social-btn:hover {
+    background-color: #555;
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    font-size: 10px;
+    color: #666;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Mobiele Responsiviteit */
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .nav-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+    
+    .footer-logo {
+        margin: 0 auto; 
+    }
+
+    .footer-socials {
+        align-items: center;
+    }
+}
