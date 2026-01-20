@@ -1,68 +1,78 @@
-/* --- RESET & GLOBAL --- */
+/* =========================================
+   1. RESET & ALGEMENE INSTELLINGEN
+   ========================================= */
 * {
-    box-sizing: border-box;
+    /* Zorgt ervoor dat padding en borders IN de breedte worden meegerekend. 
+       Dit voorkomt dat elementen groter worden dan je instelt. */
+    box-sizing: border-box; 
     margin: 0;
     padding: 0;
 }
 
 body {
     font-family: 'Roboto', sans-serif;
-    color: #444;
-    line-height: 1.6;
+    color: #444; /* Donkergrijs is vaak beter leesbaar dan puur zwart */
+    line-height: 1.6; /* Prettige regelafstand voor teksten */
     background-color: #fff;
 }
 
+/* De container zorgt dat de inhoud niet breder wordt dan 1200px 
+   en altijd in het midden van het scherm staat. */
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+    max-width: 1200px; 
+    margin: 0 auto; /* 0 boven/onder, auto links/rechts = CENTREREN */
+    padding: 0 20px; /* Beetje lucht aan de zijkanten op mobiel */
 }
 
 a {
-    text-decoration: none;
-    color: inherit;
+    text-decoration: none; /* Verwijdert de onderstreping bij links */
+    color: inherit; /* Neemt de kleur van de ouder over */
 }
 
 ul {
-    list-style: none;
+    list-style: none; /* Verwijdert de bolletjes voor lijsten */
 }
 
-/* --- HEADER --- */
+/* =========================================
+   2. HEADER (Bovengedeelte)
+   ========================================= */
 header {
-    padding: 20px 0; /* Iets minder padding omdat het logo vaak hoger is */
+    padding: 20px 0;
 }
 
 .header-inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: flex; /* Zet logo en navigatie naast elkaar */
+    justify-content: space-between; /* Duwt logo links en menu rechts */
+    align-items: center; /* Zorgt dat ze verticaal netjes uitgelijnd zijn */
 }
 
-/* NIEUW: Stijl voor het logo in de header */
 .header-logo {
     display: block;
-    max-height: 80px; /* Zorgt dat het logo niet te groot wordt */
-    width: auto;
+    max-height: 80px; /* Voorkomt dat een groot logo de header opblaast */
+    width: auto; /* Behoudt de verhoudingen */
 }
 
+/* Navigatie menu */
 nav ul {
-    display: flex;
-    gap: 40px;
+    display: flex; /* Zet menu-items naast elkaar */
+    gap: 40px; /* Ruimte tussen de menu-items */
 }
 
 nav ul li a {
-    text-transform: uppercase;
+    text-transform: uppercase; /* Alles in hoofdletters */
     font-size: 0.8rem;
     font-weight: 700;
     color: #999;
-    letter-spacing: 1px;
-    transition: color 0.3s;
+    letter-spacing: 1px; /* Ruimte tussen letters voor stijl */
+    transition: color 0.3s; /* Zorgt voor een vloeiende kleurverandering bij hover */
 }
 
+/* Hover en Active status */
 nav ul li a:hover, nav ul li a.active {
-    color: #444; /* Donkerder bij hover/active */
+    color: #444; 
 }
 
+/* Taalkeuze switch (rechtsboven) */
 .lang-switch {
     display: flex;
     gap: 5px;
@@ -79,9 +89,11 @@ nav ul li a:hover, nav ul li a.active {
     color: #fff;
 }
 
-/* --- PAGE TITLE --- */
+/* =========================================
+   3. PAGINA TITEL
+   ========================================= */
 .page-title {
-    text-align: center;
+    text-align: center; /* Tekst in het midden */
     padding: 60px 0 40px;
 }
 
@@ -94,27 +106,31 @@ nav ul li a:hover, nav ul li a.active {
     font-weight: 700;
 }
 
+/* Het streepje onder de titel */
 .separator {
     width: 40px;
     height: 2px;
     background-color: #999;
     border: none;
-    margin: 0 auto;
+    margin: 0 auto; /* Centreert het streepje */
 }
 
-/* --- MAP --- */
+/* =========================================
+   4. KAART (Google Maps)
+   ========================================= */
 .map-section {
     margin-bottom: 50px;
 }
 
 #google-map {
-    width: 100%;
+    width: 100%; /* Vult de volledige breedte van de container */
     height: 400px;
-    background-color: #eee;
-    /* Filter verwijderd zodat kaart in kleur is */
+    background-color: #eee; /* Fallback kleur als kaart niet laadt */
 }
 
-/* --- CONTACT CONTENT --- */
+/* =========================================
+   5. CONTACT GEDEELTE (Formulier & Info)
+   ========================================= */
 .contact-content {
     margin-bottom: 100px;
 }
@@ -126,24 +142,29 @@ nav ul li a:hover, nav ul li a.active {
     color: #555;
 }
 
+/* Flexbox Grid: Formulier links, Info rechts */
 .contact-grid {
     display: flex;
-    flex-wrap: wrap;
-    gap: 60px;
+    flex-wrap: wrap; /* Zorgt dat het onder elkaar zakt op kleine schermen */
+    gap: 60px; /* Ruimte tussen formulier en sidebar */
 }
 
+/* Linkerkant: Het formulier */
 .form-wrapper {
-    flex: 3;
-    min-width: 400px;
+    flex: 3; /* Neemt 3 delen van de ruimte in (breder) */
+    min-width: 400px; /* Zakt naar volgende regel als ruimte kleiner is dan 400px */
 }
 
+/* Rechterkant: Sidebar met info */
 .info-wrapper {
-    flex: 1;
+    flex: 1; /* Neemt 1 deel van de ruimte in (smaller) */
     min-width: 200px;
     padding-top: 10px;
 }
 
-/* Form Layout */
+/* --- Formulier Opmaak --- */
+
+/* Rij met 3 input velden naast elkaar (Naam, Email, Onderwerp) */
 .form-row {
     display: flex;
     gap: 20px;
@@ -151,7 +172,7 @@ nav ul li a:hover, nav ul li a.active {
 }
 
 .form-row .form-group {
-    width: 33.33%;
+    width: 33.33%; /* Elk veld neemt precies 1/3e in */
     margin-bottom: 0;
 }
 
@@ -161,7 +182,7 @@ nav ul li a:hover, nav ul li a.active {
 }
 
 .form-group label {
-    display: block;
+    display: block; /* Zorgt dat label boven de input staat */
     text-transform: uppercase;
     font-size: 0.7rem;
     font-weight: 700;
@@ -172,23 +193,24 @@ nav ul li a:hover, nav ul li a.active {
 
 .form-group input, 
 .form-group textarea {
-    width: 100%;
-    padding: 12px;
+    width: 100%; /* Input vult de ruimte van de parent (.form-group) */
+    padding: 12px; /* Ruimte binnenin het veld voor tekst */
     border: 1px solid #e1e1e1;
-    border-radius: 0;
+    border-radius: 0; /* Strakke hoeken */
     font-family: inherit;
     color: #666;
     background-color: #fff;
-    outline: none;
+    outline: none; /* Verwijdert standaard blauwe rand bij klikken */
 }
 
+/* Focus effect: als je in het veld klikt */
 .form-group input:focus, 
 .form-group textarea:focus {
     border-color: #999;
 }
 
 .form-group textarea {
-    resize: vertical;
+    resize: vertical; /* Gebruiker kan alleen de hoogte aanpassen, niet breedte */
     height: 180px;
 }
 
@@ -199,7 +221,7 @@ nav ul li a:hover, nav ul li a.active {
     padding: 12px 30px;
     text-transform: uppercase;
     font-weight: 700;
-    cursor: pointer;
+    cursor: pointer; /* Handje-icoon bij hover */
     font-size: 0.85rem;
     letter-spacing: 1px;
     transition: background 0.3s;
@@ -210,7 +232,7 @@ nav ul li a:hover, nav ul li a.active {
     background-color: #999;
 }
 
-/* --- INFO SIDEBAR --- */
+/* --- Info Sidebar (Rechts) --- */
 .info-block {
     margin-bottom: 30px;
     font-size: 0.85rem;
@@ -229,33 +251,34 @@ nav ul li a:hover, nav ul li a.active {
     color: #777;
 }
 
-/* --- FOOTER --- */
+/* =========================================
+   6. FOOTER
+   ========================================= */
 footer {
-    background-color: #333;
-    color: #bbb;
+    background-color: #333; /* Donkere achtergrond */
+    color: #bbb; /* Lichte tekst */
     padding-top: 60px;
     font-size: 0.8rem;
 }
 
 .footer-inner {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Kolommen zakken onder elkaar op mobiel */
     gap: 40px;
     margin-bottom: 50px;
     justify-content: space-between;
 }
 
 .footer-col {
-    flex: 1;
+    flex: 1; /* Alle kolommen zijn even breed */
     min-width: 200px;
 }
 
-/* NIEUW: Stijl voor logo in footer */
 .footer-logo {
     display: block;
     max-width: 100%; 
     height: auto;
-    max-height: 100px; /* Beperkte hoogte in de footer */
+    max-height: 100px;
 }
 
 .address-col h4 {
@@ -269,17 +292,17 @@ footer {
     color: #aaa;
 }
 
-/* Social Buttons Styling */
+/* Social Media Knoppen */
 .social-col {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Zet items onder elkaar i.p.v. naast elkaar */
     gap: 10px;
     align-items: flex-start;
 }
 
 .social-link {
     display: flex;
-    align-items: center;
+    align-items: center; /* Icoon en tekst verticaal uitlijnen */
     gap: 12px;
     color: #ccc;
     transition: opacity 0.3s;
@@ -289,27 +312,24 @@ footer {
     opacity: 0.8;
 }
 
+/* Vierkante icoontjes */
 .icon-box {
     width: 32px;
     height: 32px;
     display: flex;
-    align-items: center;
+    align-items: center; /* Icoon centreren in het vierkantje */
     justify-content: center;
     border-radius: 3px;
     color: #fff;
     font-size: 14px;
 }
 
-.icon-box.fb {
-    background-color: #3b5998;
-}
+.icon-box.fb { background-color: #3b5998; }
+.icon-box.insta { background-color: #3f729b; }
 
-.icon-box.insta {
-    background-color: #3f729b;
-}
-
+/* Onderste balk (Copyright) */
 .footer-bottom {
-    background-color: #222; /* Iets donkerder voor de alleronderste balk */
+    background-color: #222; /* Nog iets donkerder */
     padding: 20px 0;
     color: #777;
     font-size: 0.75rem;
@@ -317,6 +337,6 @@ footer {
 
 .bottom-inner {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Tekst links en rechts uit elkaar duwen */
     flex-wrap: wrap;
 }

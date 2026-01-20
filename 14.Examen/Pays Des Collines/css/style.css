@@ -1,7 +1,11 @@
-/* --- ALGEMENE RESET & VARIABELEN --- */
+/* =========================================
+   1. RESET & ALGEMENE INSTELLINGEN
+   ========================================= */
 * {
     margin: 0;
     padding: 0;
+    /* CRUCIAAL: Zorgt ervoor dat padding en borders BINNEN de breedte vallen.
+       Zonder dit wordt een blok van 300px + 20px padding ineens 340px breed. */
     box-sizing: border-box;
 }
 
@@ -12,7 +16,11 @@ body {
     background-color: #fff;
 }
 
-/* --- Top Bar --- */
+/* =========================================
+   2. TOP BAR & NAVIGATIE
+   ========================================= */
+
+/* --- Top Bar (Het dunne balkje bovenin) --- */
 .top-bar {
     background-color: #fff;
     border-bottom: 1px solid #f0f0f0;
@@ -22,11 +30,12 @@ body {
 }
 
 .top-bar-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: flex; /* Elementen naast elkaar */
+    justify-content: space-between; /* Links en rechts uit elkaar duwen */
+    align-items: center; /* Verticaal in het midden */
 }
 
+/* Taalkeuze styling */
 .lang-selector a {
     margin-left: 10px;
     color: #999;
@@ -35,34 +44,34 @@ body {
 
 .lang-selector a.active {
     color: #333;
-    background-color: #ddd;
+    background-color: #ddd; /* Achtergrondje voor de actieve taal */
     padding: 2px 5px;
 }
 
-/* Container class om inhoud te centreren (zoals de witte ruimte in de mockup) */
+/* --- Container (De basis voor je lay-out) --- */
 .container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 20px;
+    max-width: 1100px; /* Maximale breedte van de site */
+    margin: 0 auto; /* 0 = boven/onder, auto = links/rechts (CENTREREN) */
+    padding: 0 20px; /* Voorkomt dat tekst tegen de rand plakt op mobiel */
 }
 
 a {
-    text-decoration: none;
+    text-decoration: none; /* Geen streepjes onder links */
     color: inherit;
-    transition: 0.3s;
+    transition: 0.3s; /* Zachte overgang bij hover */
 }
 
 ul {
-    list-style: none;
+    list-style: none; /* Geen bolletjes */
 }
 
 img {
-    max-width: 100%;
-    display: block;
+    max-width: 100%; /* Plaatjes worden nooit breder dan hun container */
+    display: block; /* Verwijdert de witte rand onder plaatjes */
 }
 
 .logo {
-    width: 10%;
+    width: 10%; /* Relatieve breedte */
     height: auto;
     border: 1px solid #ddd;
     padding: 5px;
@@ -70,7 +79,7 @@ img {
     margin-bottom: 20px;
 }
 
-/* --- TYPOGRAFIE --- */
+/* --- Typografie & Knoppen --- */
 h2.section-title {
     text-transform: uppercase;
     text-align: center;
@@ -80,17 +89,17 @@ h2.section-title {
     letter-spacing: 1px;
 }
 
+/* Het streepje onder de titel */
 hr.divider {
     width: 50px;
     height: 3px;
     background-color: #999;
     border: none;
-    margin: 0 auto 40px auto;
+    margin: 0 auto 40px auto; /* Centreren met auto */
 }
 
-/* --- KNOPPEN --- */
 .btn {
-    display: inline-block;
+    display: inline-block; /* Zorgt dat margin/padding werkt op een <a> tag */
     padding: 12px 30px;
     text-transform: uppercase;
     font-size: 0.9rem;
@@ -119,18 +128,19 @@ hr.divider {
     color: #fff;
 }
 
-/* --- HEADER --- */
+/* --- Header Layout --- */
 header {
     padding: 20px 0;
     background: #fff;
 }
 
 .header-content {
-    display: flex;
+    display: flex; /* Logo en Menu naast elkaar */
     justify-content: space-between;
     align-items: center;
 }
 
+/* Extra taalkeuze in header (soms dubbelop, let op HTML) */
 .lang-switch {
     text-align: right;
     font-size: 0.8rem;
@@ -147,9 +157,10 @@ header {
     font-weight: bold;
 }
 
+/* Menu items */
 .nav-links {
     display: flex;
-    gap: 25px;
+    gap: 25px; /* Ruimte tussen de links */
 }
 
 .nav-links a {
@@ -164,49 +175,53 @@ header {
 }
 
 .burger-menu {
-    display: none; 
+    display: none; /* Verbergen op desktop! Tonen we pas op mobiel */
     font-size: 1.5rem;
     cursor: pointer;
 }
 
-/* --- HERO SLIDER --- */
+/* =========================================
+   3. HERO SLIDER (POSITIONERING IS BELANGRIJK)
+   ========================================= */
 .hero {
+    /* Parent moet RELATIVE zijn zodat children (absolute)
+       zich ten opzichte van DIT blok positioneren */
     position: relative;
     width: 100%;
     height: 500px; 
     background-color: #eee;
-    overflow: hidden;
+    overflow: hidden; /* Snijdt alles af wat buiten de box valt */
 }
 
 .hero-image {
     width: 100%;
     height: 100%;
-    background-size: cover;
+    background-size: cover; /* Plaatje vult de hele div zonder vervorming */
     background-position: center;
     position: relative;
 }
 
-/* Pijltjes aan de zijkant */
+/* Pijltjes aan de zijkant (Absolute Positioning) */
 .slider-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0,0,0,0.3);
+    position: absolute; /* Losmaken van de flow */
+    top: 50%; /* Halverwege de hoogte */
+    transform: translateY(-50%); /* Exacte verticale centrering */
+    background: rgba(0,0,0,0.3); /* Transparant zwart */
     color: white;
     border: none;
     padding: 20px 15px;
     cursor: pointer;
-    z-index: 2;
+    z-index: 2; /* Zorgt dat knop BOVEN het plaatje ligt */
 }
 
-.slider-btn.left { left: 0; }
-.slider-btn.right { right: 0; }
+.slider-btn.left { left: 0; } /* Plakt links */
+.slider-btn.right { right: 0; } /* Plakt rechts */
 
-/* Tekstblok in de slider (linksonder) */
+/* Tekstblok in de slider */
 .hero-caption {
     position: absolute;
-    bottom: 40px;
-    left: 10%; 
+    bottom: 40px; /* 40px vanaf de onderkant */
+    left: 10%; /* 10% vanaf de linkerkant */
     background-color: rgba(60, 60, 60, 0.9);
     color: #fff;
     padding: 15px 25px;
@@ -218,9 +233,11 @@ header {
     font-size: 1.1rem;
 }
 
-/* --- SECTIES --- */
+/* =========================================
+   4. CONTENT SECTIES & GRIDS
+   ========================================= */
 section {
-    padding: 60px 0;
+    padding: 60px 0; /* Ruimte tussen secties */
 }
 
 .bg-light {
@@ -235,25 +252,25 @@ section {
     margin-bottom: 20px;
 }
 
-/* Grids (Features & Reviews) */
+/* --- CSS GRIDS --- */
 .grid-3 {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    display: grid; /* Grid activeren */
+    grid-template-columns: repeat(3, 1fr); /* 3 gelijke kolommen */
+    gap: 30px; /* Ruimte tussen de blokken */
 }
 
 .grid-2 {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* 2 gelijke kolommen */
     gap: 40px;
 }
 
-/* Cards styling */
+/* Cards styling (De blokjes in de grid) */
 .card img {
     width: 100%;
     height: auto;
     border: 1px solid #ddd;
-    padding: 5px; /* Kader effect zoals in mockup */
+    padding: 5px; /* Het witte randje om de foto (kader effect) */
     background: #fff;
     margin-bottom: 20px;
 }
@@ -288,15 +305,15 @@ section {
     color: #999;
 }
 
-/* CTA Bar styling */
+/* --- CTA (Call to Action) Balk --- */
 .cta-content {
-    display: flex;
+    display: flex; /* Tekst links, knoppen rechts */
     justify-content: space-between;
     align-items: center;
 }
 
 .cta-text {
-    flex: 2;
+    flex: 2; /* Tekst krijgt 2x zoveel ruimte als normaal */
     padding-right: 40px;
 }
 
@@ -308,13 +325,15 @@ section {
 }
 
 .cta-buttons {
-    flex: 1;
+    flex: 1; /* Knoppenblok krijgt 1 deel ruimte */
     display: flex;
     gap: 10px;
-    justify-content: flex-end;
+    justify-content: flex-end; /* Knoppen rechts uitlijnen */
 }
 
-/* --- FOOTER --- */
+/* =========================================
+   5. FOOTER
+   ========================================= */
 footer {
     background-color: #2a2a2a;
     color: #fff;
@@ -324,6 +343,7 @@ footer {
 
 .footer-grid {
     display: grid;
+    /* Kolom verdeling: 1 deel - 2 delen - 1 deel */
     grid-template-columns: 1fr 2fr 1fr;
     gap: 40px;
     padding-bottom: 40px;
@@ -345,8 +365,9 @@ footer {
     margin-bottom: 2px;
 }
 
+/* Social Buttons (Flexbox in Grid) */
 .social-btn {
-    display: flex;
+    display: flex; /* Icoon en tekst naast elkaar */
     align-items: center;
     background-color: #3b5998; 
     color: white;
@@ -374,28 +395,33 @@ footer {
 
 .footer-bottom .container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Links en rechts uitlijnen */
 }
 
+/* =========================================
+   6. MEDIA QUERIES (MOBIEL)
+   ========================================= */
 @media (max-width: 768px) {
     
-    /* Header aanpassen */
+    /* HEADER AANPASSINGEN */
     .nav-links, .lang-switch {
-        display: none; 
+        display: none; /* Verberg het normale menu */
     }
     
     .burger-menu {
-        display: block;
+        display: block; /* Toon de hamburger knop */
     }
     
-    /* Grid systemen naar 1 kolom */
+    /* LAYOUT AANPASSINGEN (STACKING) */
+    
+    /* Alle grids van meerdere kolommen naar 1 kolom */
     .grid-3, .grid-2 {
         grid-template-columns: 1fr;
     }
     
-    /* CTA sectie onder elkaar */
+    /* CTA balk: van naast elkaar naar onder elkaar */
     .cta-content {
-        flex-direction: column;
+        flex-direction: column; 
         text-align: center;
     }
     
@@ -405,7 +431,7 @@ footer {
     }
     
     .cta-buttons {
-        justify-content: center;
+        justify-content: center; /* Knoppen centreren */
         width: 100%;
     }
     
@@ -416,16 +442,17 @@ footer {
     }
     
     .footer-logo {
-        margin: 0 auto;
+        margin: 0 auto; /* Logo centreren */
     }
     
     .footer-bottom .container {
-        flex-direction: column;
+        flex-direction: column; /* Copyright en credits onder elkaar */
         gap: 10px;
     }
     
-    /* Hero caption aanpassen */
+    /* HERO AANPASSINGEN */
     .hero-caption {
+        /* Tekstblok over de hele breedte en onderaan */
         left: 0;
         right: 0;
         bottom: 0;

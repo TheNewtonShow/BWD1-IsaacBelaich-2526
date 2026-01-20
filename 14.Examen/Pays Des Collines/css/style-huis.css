@@ -2,7 +2,9 @@
    1. GLOBAL & RESET
    ========================================= */
 * {
-    box-sizing: border-box;
+    /* CRUCIAAL: Zorgt dat padding en borders binnen de breedte vallen. 
+       Zonder dit wordt een div van 100px + 20px padding totaal 140px breed. */
+    box-sizing: border-box; 
     margin: 0;
     padding: 0;
 }
@@ -14,7 +16,7 @@ body {
     background-color: #fff;
 }
 
-/* --- Top Bar --- */
+/* --- Top Bar (Het smalle balkje bovenaan) --- */
 .top-bar {
     background-color: #fff;
     border-bottom: 1px solid #f0f0f0;
@@ -24,11 +26,13 @@ body {
 }
 
 .top-bar-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    /* Flexbox zorgt dat links en rechts uitgelijnd worden */
+    display: flex; 
+    justify-content: space-between; /* Duwt content naar de uiterste randen */
+    align-items: center; /* Verticaal centreren */
 }
 
+/* Taal selector styling */
 .lang-selector a {
     margin-left: 10px;
     color: #999;
@@ -38,29 +42,34 @@ body {
 .lang-selector a.active {
     color: #333;
     background-color: #ddd;
-    padding: 2px 5px;
+    padding: 2px 5px; /* Maakt het knopje iets groter dan de tekst */
 }
 
+/* Koppen styling */
 h1, h2, h3, h4, h5 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', sans-serif; /* Andere font voor koppen */
     font-weight: 700;
     margin-bottom: 1rem;
     color: #222;
 }
 
-a { text-decoration: none; color: inherit; transition: 0.3s; }
+a { 
+    text-decoration: none; 
+    color: inherit; 
+    transition: 0.3s; /* Zorgt voor zachte overgang bij hover */
+}
 ul { list-style: none; }
 
-/* Algemene Container */
+/* --- Algemene Container --- */
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+    max-width: 1200px; /* De site wordt nooit breder dan dit */
+    margin: 0 auto; /* Centreert de container horizontaal */
+    padding: 0 20px; /* Voorkomt dat tekst tegen de rand plakt op mobiel */
 }
 
 /* Secties witruimte */
 section {
-    padding: 60px 0;
+    padding: 60px 0; /* Ruimte boven en onder elke sectie */
 }
 
 .section-title {
@@ -71,19 +80,21 @@ section {
     margin-bottom: 10px;
 }
 
+/* Het streepje onder de titel */
 .divider {
     width: 50px;
     height: 2px;
     background-color: #333;
-    margin: 0 auto 50px auto;
+    margin: 0 auto 50px auto; /* 0 boven, auto rechts, 50px onder, auto links */
     border: none;
 }
 
-/* Grid Helper (voor de faciliteiten) */
+/* --- CSS GRID Helper (Belangrijk voor examen!) --- */
 .grid-3 {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
+    display: grid; /* Activeert Grid layout */
+    /* Maakt 3 kolommen van gelijke breedte (1 fraction each) */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 40px; /* Ruimte tussen de kolommen en rijen */
 }
 
 /* =========================================
@@ -96,19 +107,20 @@ header {
 }
 
 .header-content {
-    display: flex;
+    display: flex; /* Zet logo links en navigatie rechts */
     justify-content: space-between;
     align-items: center;
 }
 
 .logo img {
-    height: 60px;
+    height: 60px; /* Beperkt de hoogte van het logo */
 }
 
+/* Nav container (bevat taalkeuze + menu) */
 nav {
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+    flex-direction: column; /* Zet taalkeuze BOVEN de menulinks */
+    align-items: flex-end; /* Lijnt alles rechts uit */
 }
 
 .lang-switch {
@@ -127,9 +139,10 @@ nav {
     color: #333;
 }
 
+/* De daadwerkelijke menu links */
 .nav-links {
-    display: flex;
-    gap: 30px;
+    display: flex; /* Zet de links naast elkaar */
+    gap: 30px; /* Ruimte tussen de links */
 }
 
 .nav-links a {
@@ -146,17 +159,17 @@ nav {
 }
 
 .burger-menu {
-    display: none; 
+    display: none; /* Standaard verbergen, tonen we pas op mobiel */
 }
 
 /* =========================================
-   3. PAGINA: HET HUIS (JOUW CODE + TWEAKS)
+   3. PAGINA: HET HUIS (SPECIFIEKE LAY-OUT)
    ========================================= */
 
-/* Overlappende sectie (Image + Text) */
+/* --- Overlappende sectie (Image + Text) --- */
 .overlap-container {
-    display: flex;
-    align-items: center;
+    display: flex; /* Zet plaatje en tekstblok naast elkaar */
+    align-items: center; /* Verticaal in het midden */
     position: relative;
     margin-bottom: 60px;
     max-width: 1100px; 
@@ -165,37 +178,40 @@ nav {
 }
 
 .overlap-image {
-    width: 65%;
+    width: 65%; /* Neemt 65% van de breedte in */
     background-color: #ccc; 
 }
 
 .overlap-image img {
-    width: 100%;
+    width: 100%; /* Zorgt dat plaatje past in de container */
     height: auto;
-    display: block;
+    display: block; /* Verwijdert de witruimte onderaan images */
 }
 
+/* DIT IS HET TRUCJE VOOR DE OVERLAP */
 .overlap-text {
     width: 45%; 
     background: #fff;
     padding: 50px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05); /* Zachte schaduw */
     
-    /* Cruciaal voor de mockup look: */
+    /* Trekt de tekstbox 10% naar links, over het plaatje heen */
     margin-left: -10%; 
+    
+    /* Zorgt dat de tekstbox BOVEN het plaatje ligt */
     z-index: 2; 
-    position: relative;
+    position: relative; /* Nodig om z-index te laten werken */
 }
 
 .house-description {
     max-width: 800px;
-    margin: 0 auto 60px auto;
+    margin: 0 auto 60px auto; /* Centreren blok */
     color: #666;
     line-height: 1.8;
     text-align: left; 
 }
 
-/* Faciliteiten Lijsten */
+/* --- Faciliteiten Lijsten --- */
 .facility-col h3 {
     text-transform: uppercase;
     font-size: 0.9rem;
@@ -212,27 +228,30 @@ nav {
     margin-bottom: 25px;
 }
 
+/* Lijst met vinkjes iconen */
 .check-list li {
     margin-bottom: 12px;
-    padding-left: 25px;
+    padding-left: 25px; /* Ruimte maken voor het icoontje links */
     position: relative;
     font-size: 0.9rem;
     color: #555;
 }
 
+/* Het vinkje (Font Awesome) via CSS toevoegen */
 .check-list li::before {
-    content: '\f058'; 
-    font-family: "Font Awesome 6 Free"; 
+    content: '\f058'; /* De unicode voor het icoontje */
+    font-family: "Font Awesome 6 Free"; /* Verwijzing naar het font bestand */
     font-weight: 900;
-    position: absolute;
-    left: 0;
+    position: absolute; /* Losmaken van de tekst */
+    left: 0; /* Helemaal links in de padding ruimte */
     top: 3px;
-    color: #d4a017;
+    color: #d4a017; /* Goudkleur */
     font-size: 1rem;
 }
 
+/* --- Galerij --- */
 .gallery-main {
-    position: relative;
+    position: relative; /* Ouder voor de absolute pijltjes */
     margin-bottom: 10px;
 }
 
@@ -242,10 +261,11 @@ nav {
     display: block;
 }
 
+/* Navigatie pijltjes over de foto */
 .gallery-nav {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    position: absolute; /* Plakt ze vast op de foto */
+    top: 50%; /* Verticaal in het midden */
+    transform: translateY(-50%); /* Exact centreren correctie */
     background: rgba(255,255,255,0.8);
     color: #333;
     border: none;
@@ -257,8 +277,8 @@ nav {
 }
 
 .gallery-nav:hover { background: #fff; }
-.gallery-nav.left { left: 0; }
-.gallery-nav.right { right: 0; }
+.gallery-nav.left { left: 0; } /* Plakt links */
+.gallery-nav.right { right: 0; } /* Plakt rechts */
 
 .gallery-label {
     position: absolute;
@@ -273,16 +293,17 @@ nav {
     letter-spacing: 1px;
 }
 
+/* Grid voor de kleine foto's */
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(6, 1fr); /* 6 foto's naast elkaar */
     gap: 10px;
 }
 
 .gallery-grid img {
     width: 100%;
     height: 100px;
-    object-fit: cover;
+    object-fit: cover; /* Zorgt dat foto's niet vervormen als ze vierkant worden gemaakt */
     cursor: pointer;
     transition: opacity 0.3s;
     display: block;
@@ -302,9 +323,11 @@ footer {
     font-size: 0.9rem;
 }
 
+/* Footer layout met Grid */
 .footer-grid {
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
+    /* Kolom 1 = 1 deel, Kolom 2 = 2 delen (breedst), Kolom 3 = 1 deel */
+    grid-template-columns: 1fr 2fr 1fr; 
     gap: 40px;
     align-items: start;
     margin-bottom: 40px;
@@ -324,9 +347,10 @@ footer {
     margin-bottom: 5px;
 }
 
+/* Social buttons onder elkaar */
 .footer-socials {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; 
     gap: 10px;
 }
 
@@ -356,25 +380,33 @@ footer {
     justify-content: space-between;
 }
 
+/* =========================================
+   5. MEDIA QUERIES (Mobiel / Tablet)
+   ========================================= */
 @media (max-width: 768px) {
-    /* Layout */
+    /* Layout veranderingen */
+    
+    /* Grid van 3 kolommen naar 1 kolom onder elkaar */
     .grid-3 { grid-template-columns: 1fr; }
+    
     .footer-grid { grid-template-columns: 1fr; text-align: center; }
+    
+    /* Footer bottom flexbox naar kolom (onder elkaar) */
     .footer-bottom .container { flex-direction: column; gap: 10px; }
     
-    /* Header */
-    .nav-links { display: none; } /* Simpele hide voor mobiel */
-    .burger-menu { display: block; font-size: 1.5rem; cursor: pointer;}
+    /* Header aanpassingen */
+    .nav-links { display: none; } /* Verbergt normale menu */
+    .burger-menu { display: block; font-size: 1.5rem; cursor: pointer;} /* Toont hamburger */
     
-    /* Overlap */
-    .overlap-container { flex-direction: column; }
+    /* Overlap sectie fixen voor mobiel */
+    .overlap-container { flex-direction: column; } /* Onder elkaar i.p.v. naast elkaar */
     .overlap-image { width: 100%; }
     .overlap-text { 
         width: 90%; 
-        margin-left: 0; 
-        margin-top: -30px; /* Klein beetje overlap behouden */
+        margin-left: 0; /* Reset de negatieve marge */
+        margin-top: -30px; /* Klein beetje overlap in de hoogte behouden */
     }
     
-    /* Galerij */
+    /* Galerij grid: van 6 naast elkaar naar 3 naast elkaar */
     .gallery-grid { grid-template-columns: repeat(3, 1fr); }
 }

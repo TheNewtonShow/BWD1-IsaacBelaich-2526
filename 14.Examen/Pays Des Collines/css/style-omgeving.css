@@ -1,32 +1,41 @@
-/* Reset en basisinstellingen */
+/* =========================================
+   1. RESET & ALGEMENE INSTELLINGEN
+   ========================================= */
 * {
     margin: 0;
     padding: 0;
+    /* BELANGRIJK: Zorgt dat padding de breedte van een element niet vergroot.
+       Een div van 100px breed met 20px padding blijft 100px breed. */
     box-sizing: border-box;
 }
 
 body {
+    /* 'Lato' is het hoofdfont, 'sans-serif' is de backup als Lato niet laadt */
     font-family: 'Lato', sans-serif;
     font-size: 14px;
-    line-height: 1.8;
+    line-height: 1.8; /* Veel witruimte tussen regels leest prettiger */
     color: #555;
     background-color: #fff;
 }
 
 h1, h2, h3 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Playfair Display', serif; /* Serif font voor luxe uitstraling */
     color: #333;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    text-transform: uppercase; /* Alles in hoofdletters */
+    letter-spacing: 1px; /* Ruimte tussen letters voor stijl */
 }
 
 a {
-    text-decoration: none;
-    color: inherit;
-    transition: 0.3s;
+    text-decoration: none; /* Geen streepjes onder links */
+    color: inherit; /* Neemt kleur van ouder over */
+    transition: 0.3s; /* Zorgt voor een vloeiend effect bij hover */
 }
 
-/* --- Top Bar --- */
+/* =========================================
+   2. TOP BAR & HEADER
+   ========================================= */
+
+/* --- Top Bar (Het smalle balkje bovenaan) --- */
 .top-bar {
     background-color: #fff;
     border-bottom: 1px solid #f0f0f0;
@@ -36,9 +45,9 @@ a {
 }
 
 .top-bar-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: flex; /* Activeer Flexbox */
+    justify-content: space-between; /* Duwt elementen naar uiterst links en rechts */
+    align-items: center; /* Verticaal centreren */
 }
 
 .lang-selector a {
@@ -48,16 +57,17 @@ a {
 }
 
 .lang-selector a.active {
-    color: #333;
+    color: #333; /* Actieve taal is donkerder */
     background-color: #ddd;
     padding: 2px 5px;
 }
 
-/* Header Styles */
+/* --- Header Styles --- */
 header {
     padding: 20px 50px;
 }
 
+/* Extra styling voor top-bar binnen de header context */
 .top-bar {
     text-align: right;
     font-size: 11px;
@@ -70,26 +80,28 @@ header {
     cursor: pointer;
 }
 
+/* Container voor Logo + Navigatie */
 .nav-container {
-    display: flex;
-    justify-content: space-between;
+    display: flex; /* Zet logo en menu naast elkaar */
+    justify-content: space-between; /* Logo links, menu rechts */
     align-items: center;
     border-bottom: 1px solid #eee;
     padding-bottom: 20px;
 }
 
-/* NIEUW: Stijl voor Header Logo */
+/* Header Logo Styling */
 .header-logo-img {
     width: 80px;      
-    height: auto;     
-    display: block;
+    height: auto; /* Behoudt de aspect-ratio bij schalen */   
+    display: block; /* Verwijdert de standaard witruimte onder afbeeldingen */
     border: 1px solid #ddd; 
 }
 
+/* Navigatie Menu */
 nav ul {
-    list-style: none;
-    display: flex;
-    gap: 30px;
+    list-style: none; /* Verwijdert bolletjes */
+    display: flex; /* Zet de li-items naast elkaar */
+    gap: 30px; /* Ruimte tussen de menu-items */
 }
 
 nav ul li a {
@@ -104,9 +116,13 @@ nav ul li a:hover, nav ul li a.active {
     color: #000;
 }
 
+/* =========================================
+   3. CONTENT & GRID LAYOUT
+   ========================================= */
+
 /* Main Title Section */
 .main-title-section {
-    text-align: center;
+    text-align: center; /* Centreert de tekst en het streepje */
     padding: 60px 20px;
 }
 
@@ -115,26 +131,28 @@ nav ul li a:hover, nav ul li a.active {
     margin-bottom: 15px;
 }
 
+/* Het decoratieve streepje onder de titel */
 .separator {
     width: 40px;
     height: 2px;
     background-color: #333;
-    margin: 0 auto;
+    margin: 0 auto; /* 0 auto centreert een block-element met een breedte */
 }
 
-/* Grid Layout */
+/* --- GRID LAYOUT (Belangrijk!) --- */
 .grid-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
-    max-width: 1200px;
-    margin: 0 auto 80px auto;
+    display: grid; /* Activeer Grid */
+    /* Maak 3 kolommen van gelijke breedte (1 fraction elk) */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 40px; /* Ruimte tussen kolommen en rijen */
+    max-width: 1200px; /* Inhoud wordt nooit breder dan dit */
+    margin: 0 auto 80px auto; /* Centreer de grid container op de pagina */
     padding: 0 20px;
 }
 
 .column {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Zorgt dat tekst/plaatjes in de kolom onder elkaar staan */
     gap: 20px;
 }
 
@@ -144,25 +162,25 @@ nav ul li a:hover, nav ul li a.active {
 }
 
 .column p {
-    text-align: justify;
+    text-align: justify; /* Vult de regels mooi uit (kranten-stijl) */
     margin-bottom: 10px;
     font-size: 13px;
 }
 
-
+/* Afbeeldingen in de grid */
 .image-box {
     width: 100%;
     margin-bottom: 15px;
 }
 
 .content-img {
-    width: 100%;       
+    width: 100%; /* Plaatje vult de breedte van de kolom */     
     height: auto;      
     display: block;
-    background-color: #eee; 
+    background-color: #eee; /* Grijze achtergrond als plaatje niet laadt */
 }
 
-/* Citaten */
+/* --- Citaten / Quotes --- */
 blockquote {
     font-family: 'Playfair Display', serif;
     font-style: italic;
@@ -170,6 +188,7 @@ blockquote {
     padding: 20px 0;
 }
 
+/* Quote met een streepje links */
 .quote-box {
     border-left: 3px solid #ddd;
     padding-left: 20px;
@@ -181,18 +200,20 @@ blockquote {
     font-size: 15px;
     margin-bottom: 20px;
     line-height: 1.6;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #eee; /* Streepje onderaan */
 }
 
-/* Footer Styles */
+/* =========================================
+   4. FOOTER
+   ========================================= */
 footer {
-    background-color: #333;
-    color: #ccc;
+    background-color: #333; /* Donkere achtergrond */
+    color: #ccc; /* Lichte tekst */
     padding: 60px 50px 20px 50px;
 }
 
 .footer-content {
-    display: flex;
+    display: flex; /* Zet logo, adres en socials naast elkaar */
     justify-content: space-between;
     max-width: 1200px;
     margin: 0 auto;
@@ -200,7 +221,6 @@ footer {
     padding-bottom: 40px;
     margin-bottom: 20px;
 }
-
 
 .footer-logo-img {
     width: 80px;
@@ -214,18 +234,19 @@ footer {
     line-height: 1.6;
 }
 
+/* Social Buttons */
 .footer-socials {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Knoppen ONDER elkaar i.p.v. naast elkaar */
     gap: 10px;
 }
 
 .social-btn {
     display: inline-block;
     background-color: #444;
-    padding: 8px 15px;
+    padding: 8px 15px; /* Ruimte binnen de knop */
     font-size: 11px;
-    border-radius: 3px;
+    border-radius: 3px; /* Licht afgeronde hoekjes */
     color: #fff;
 }
 
@@ -239,36 +260,46 @@ footer {
     font-size: 10px;
     color: #666;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Copyright links, designer rechts */
 }
 
-/* Mobiele Responsiviteit */
+/* =========================================
+   5. MEDIA QUERIES (Mobiel / Tablet)
+   ========================================= */
+/* Alles hierbinnen geldt ALLEEN als scherm smaller is dan 768px */
 @media (max-width: 768px) {
+    
+    /* 1. Grid aanpassen */
     .grid-container {
-        grid-template-columns: 1fr;
+        /* Van 3 kolommen (repeat 3) naar 1 kolom */
+        grid-template-columns: 1fr; 
     }
     
+    /* 2. Header aanpassen */
     .nav-container {
-        flex-direction: column;
+        /* Van naast elkaar (row) naar onder elkaar */
+        flex-direction: column; 
         gap: 20px;
     }
 
+    /* 3. Navigatie menu */
     nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
+        flex-wrap: wrap; /* Als items niet passen, ga naar volgende regel */
+        justify-content: center; /* Menu items in het midden */
     }
 
+    /* 4. Footer aanpassen */
     .footer-content {
-        flex-direction: column;
+        flex-direction: column; /* Kolommen onder elkaar stapelen */
         gap: 30px;
-        text-align: center;
+        text-align: center; /* Alle tekst centreren voor mobiel */
     }
     
     .footer-logo {
-        margin: 0 auto; 
+        margin: 0 auto; /* Logo centreren */
     }
 
     .footer-socials {
-        align-items: center;
+        align-items: center; /* Knoppen centreren */
     }
 }
