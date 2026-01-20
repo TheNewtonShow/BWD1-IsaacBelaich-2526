@@ -1,0 +1,332 @@
+/* =========================================
+   1. RESET & BASIS
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    /* BELANGRIJK: Zorgt dat padding de breedte niet beïnvloedt. 
+       Een div van 300px blijft 300px, ook met 20px padding. */
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #FFBF00;
+    line-height: 1.6; /* Prettige leesbaarheid */
+    background-color: #CFB53B;
+}
+
+/* De container houdt alles netjes in het midden op grote schermen */
+.container {
+    max-width: 1200px;
+    margin: 0 auto; /* Boven/onder 0, Links/Rechts auto = Centreren */
+    padding: 0 20px; /* Veiligheidsmarge aan zijkanten voor mobiel */
+}
+
+a {
+    text-decoration: none; /* Geen onderstreping */
+    color: inherit; /* Neemt kleur van ouder over */
+}
+
+/* =========================================
+   2. HEADER & NAVIGATIE
+   ========================================= */
+
+/* --- Top Bar (Het smalle balkje bovenin) --- */
+.top-bar {
+    background-color: #E0B0FF;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 12px;
+    padding: 10px 0;
+    color: #666;
+}
+
+.top-bar-content {
+    display: flex; /* Zet elementen naast elkaar */
+    justify-content: space-between; /* Duwt linkse en rechtse content uit elkaar */
+    align-items: center; /* Verticaal centreren */
+}
+
+.lang-selector a {
+    margin-left: 10px;
+    color: #999;
+    font-weight: bold;
+}
+
+.lang-selector a.active {
+    color: #333; /* Actieve taal is donkerder */
+    background-color: #ddd; /* Achtergrondje voor actieve taal */
+    padding: 2px 5px;
+}
+
+/* --- Hoofd Navigatie --- */
+header {
+    padding: 20px 0;
+    background: #fff;
+}
+
+.nav-content {
+    display: flex; /* Logo links, Menu rechts */
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 60px;
+    border: 1px solid #ccc; 
+}
+
+nav ul {
+    list-style: none; /* Bolletjes weg */
+    display: flex; /* Menu items naast elkaar */
+    gap: 30px; /* Ruimte tussen de items */
+}
+
+nav ul li a {
+    font-size: 13px;
+    font-weight: bold;
+    color: #444;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+nav ul li a.active,
+nav ul li a:hover {
+    color: #aaa; /* Lichte kleurverandering bij hover */
+}
+
+/* =========================================
+   3. MAIN CONTENT (GRID LAYOUT)
+   ========================================= */
+main {
+    padding: 60px 20px;
+}
+
+.main-title {
+    text-align: center;
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Het streepje onder de titel */
+.title-divider {
+    width: 50px;
+    height: 1px;
+    background-color: #333;
+    border: none;
+    margin: 0 auto 60px auto; /* Centreren: 0 auto */
+}
+
+/* --- GRID VOOR DE PRIJSLIJST (Belangrijk!) --- */
+.pricing-layout {
+    display: grid; /* Activeert Grid */
+    /* Kolom 1: 1 deel
+       Kolom 2: 1.2 delen (De middelste kolom is dus iets breder!)
+       Kolom 3: 1 deel
+    */
+    grid-template-columns: 1fr 1.2fr 1fr; 
+    gap: 40px; /* Ruimte tussen kolommen */
+}
+
+/* Linkerkant: Afbeeldingen */
+.img-wrapper {
+    margin-bottom: 20px;
+    background-color: #eee;
+    border: 1px solid #ddd;
+    padding: 5px; 
+}
+
+.img-wrapper img {
+    width: 100%; /* Plaatje past zich aan aan de breedte van de kolom */
+    height: auto;
+    display: block; /* Verwijdert witruimte onderaan plaatjes */
+    background-color: #ccc;
+}
+
+/* Midden: Prijslijst */
+.pricing-column h2 {
+    font-size: 16px;
+    color: #999;
+    margin-bottom: 20px;
+    font-weight: normal;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.price-list {
+    font-size: 14px;
+}
+
+/* Elke rij bevat een item en een prijs */
+.price-row {
+    display: flex; /* Zet tekst en prijs op 1 lijn */
+    justify-content: space-between; /* Tekst links, prijs helemaal rechts */
+    padding: 15px 0;
+    border-bottom: 1px solid #f0f0f0; /* Lijntje tussen de items */
+}
+
+.price-row .price {
+    font-weight: bold;
+    color: #333;
+}
+
+/* Rechterkant: Extra Info */
+.extra-column h3 {
+    font-size: 16px;
+    color: #999;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+.extra-column hr {
+    border: 0;
+    border-top: 1px solid #eee;
+    margin-bottom: 20px;
+}
+
+.extra-column h4 {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 10px;
+    font-weight: normal;
+}
+
+.extra-column p {
+    font-size: 13px;
+    color: #777;
+    line-height: 1.8;
+}
+
+/* =========================================
+   4. FOOTER
+   ========================================= */
+footer {
+    background-color: #ccc550; /* Donkergrijs */
+    color: #fff; /* Witte tekst */
+    padding-top: 60px;
+    margin-top: 60px;
+    font-size: 13px;
+}
+
+.footer-content {
+    display: flex; /* Kolommen naast elkaar */
+    justify-content: space-between;
+    padding-bottom: 60px;
+}
+
+.footer-logo img {
+    background: #ccc;
+    padding: 20px;
+    border: 4px solid #fff;
+    height: 120px;
+    width: 120px;
+    object-fit: cover; /* Zorgt dat plaatje niet vervormt in het vierkant */
+}
+
+.footer-address h4 {
+    font-size: 14px;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.footer-address p {
+    color: #ccc;
+    margin-bottom: 5px;
+}
+
+/* Social Media Knoppen */
+.footer-socials {
+    display: flex;
+    flex-direction: column; /* Knoppen onder elkaar */
+    gap: 15px;
+}
+
+.social-btn {
+    display: flex; /* Icoon en tekst naast elkaar in de knop */
+    align-items: center; /* Verticaal uitlijnen */
+    background-color: #3b5998; /* Facebook blauw */
+    color: white;
+    padding: 10px 15px;
+    border-radius: 3px;
+    width: 160px;
+}
+
+.social-btn.instagram {
+    background-color: #517fa4; /* Instagram blauw */
+}
+
+.social-btn i {
+    font-size: 24px;
+    margin-right: 15px;
+}
+
+/* Tekst in de knop (Like ons + op Facebook) */
+.social-text {
+    display: flex;
+    flex-direction: column; /* Tekstregels onder elkaar */
+    line-height: 1.2;
+}
+
+.social-text span {
+    font-weight: bold;
+}
+
+.social-text small {
+    font-size: 10px;
+    opacity: 0.8;
+}
+
+/* Footer Onderste Balk */
+.footer-bottom {
+    background-color: #2a2a2a; /* Nog iets donkerder */
+    padding: 20px 0;
+    color: #777;
+    font-size: 12px;
+}
+
+.bottom-flex {
+    display: flex;
+    justify-content: space-between; /* Links en rechts uitlijnen */
+}
+
+.footer-bottom a {
+    color: #777;
+    text-decoration: underline;
+}
+
+/* =========================================
+   5. RESPONSIVE (MOBIEL / TABLET)
+   ========================================= */
+@media (max-width: 900px) {
+    /* Als scherm kleiner is dan 900px: */
+    
+    .pricing-layout {
+        /* Grid verandert van 3 kolommen naar 1 kolom */
+        grid-template-columns: 1fr; 
+    }
+    
+    .footer-content {
+        /* Footer kolommen onder elkaar */
+        flex-direction: column;
+        gap: 40px;
+        text-align: center; /* Alles centreren op mobiel */
+    }
+
+    .footer-socials {
+        align-items: center; /* Knoppen centreren in de flex-kolom */
+    }
+    
+    /* Navigatie aanpassen */
+    .nav-content {
+        flex-direction: column; /* Logo boven menu */
+        gap: 20px;
+    }
+    
+    .top-bar-content {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+}
